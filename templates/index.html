@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* Background grid */
     body::before {
       content: '';
       position: fixed;
@@ -45,7 +44,6 @@
       z-index: 0;
     }
 
-    /* Glowing orbs */
     body::after {
       content: '';
       position: fixed;
@@ -73,7 +71,7 @@
       padding: 0 24px;
     }
 
-    /* ── Header ── */
+  
     header {
       padding: 28px 0 0;
       display: flex;
@@ -112,7 +110,6 @@
       color: var(--muted);
     }
 
-    /* ── Hero ── */
     .hero {
       padding: 52px 0 40px;
       text-align: center;
@@ -142,7 +139,6 @@
       font-family: var(--mono);
     }
 
-    /* ── Technique pills ── */
     .pills {
       display: flex;
       gap: 10px;
@@ -171,7 +167,6 @@
     .pill:nth-child(2) .dot { background: var(--accent2); }
     .pill:nth-child(3) .dot { background: var(--accent3); }
 
-    /* ── Main layout ── */
     .main-grid {
       display: grid;
       grid-template-columns: 280px 1fr 1fr;
@@ -180,7 +175,6 @@
       margin-bottom: 60px;
     }
 
-    /* ── Sidebar (options) ── */
     .sidebar {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -222,7 +216,6 @@
       line-height: 1.5;
     }
 
-    /* Toggle switch */
     .toggle { position: relative; width: 40px; height: 22px; }
     .toggle input { opacity: 0; width: 0; height: 0; }
     .toggle-track {
@@ -295,7 +288,6 @@
     .run-btn:active { transform: scale(.97); }
     .run-btn:disabled { opacity: .5; cursor: not-allowed; }
 
-    /* ── Code panels ── */
     .panel {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -389,7 +381,6 @@
 
     .placeholder-state .big-icon { font-size: 36px; opacity: .4; }
 
-    /* ── Stats bar ── */
     .stats-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -432,7 +423,6 @@
       letter-spacing: .8px;
     }
 
-    /* ── Error toast ── */
     .error-banner {
       display: none;
       background: rgba(247,106,106,.1);
@@ -445,7 +435,6 @@
       margin-bottom: 12px;
     }
 
-    /* ── File upload ── */
     .upload-zone {
       border: 1px dashed var(--border);
       border-radius: 10px;
@@ -461,7 +450,6 @@
 
     .upload-zone:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── Spinner ── */
     .spinner {
       display: inline-block;
       width: 14px; height: 14px;
@@ -475,7 +463,6 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 24px 0;
@@ -485,7 +472,6 @@
       color: var(--muted);
     }
 
-    /* ── Responsive ── */
     @media (max-width: 900px) {
       .main-grid { grid-template-columns: 1fr; }
       .stats-bar { grid-template-columns: repeat(2,1fr); }
@@ -496,7 +482,7 @@
   <div class="orb2"></div>
 
   <div class="wrap">
-    <!-- Header -->
+    
     <header>
       <div class="logo">
         <div class="logo-icon">🛡</div>
@@ -505,7 +491,7 @@
       <div class="badge">Diploma Work — Software Protection</div>
     </header>
 
-    <!-- Hero -->
+    
     <div class="hero">
       <h1>Python Code<br><em>Obfuscation</em> Engine</h1>
       <p>Paste your Python source. Choose your protection layers. Get hardened, analysis-resistant output in seconds.</p>
@@ -516,7 +502,7 @@
       </div>
     </div>
 
-    <!-- Stats row -->
+      
     <div class="stats-bar" id="statsBar">
       <div class="stat-card" id="sc1">
         <div class="stat-val purple" id="statRename">—</div>
@@ -536,13 +522,13 @@
       </div>
     </div>
 
-    <!-- Error -->
+     
     <div class="error-banner" id="errorBanner"></div>
 
-    <!-- Main grid -->
+       
     <div class="main-grid">
 
-      <!-- Sidebar -->
+      
       <aside class="sidebar">
         <h3>Protection Options</h3>
 
@@ -602,7 +588,7 @@
         </button>
       </aside>
 
-      <!-- Input panel -->
+      
       <div class="panel">
         <div class="panel-header">
           <div class="panel-title">
@@ -624,7 +610,7 @@ def hello(name):
         </div>
       </div>
 
-      <!-- Output panel -->
+      
       <div class="panel">
         <div class="panel-header">
           <div class="panel-title">

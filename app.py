@@ -1,11 +1,4 @@
-"""
-Software Protection via Code Obfuscation — Web Interface
-Flask Backend
-=========================================
-Routes:
-  GET  /           → Main UI
-  POST /obfuscate  → Accepts Python source, returns obfuscated code + stats
-"""
+
 
 from flask import Flask, render_template, request, jsonify, send_file
 import ast
@@ -16,10 +9,6 @@ import json
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 1 * 1024 * 1024  # 1 MB max upload
-
-# =============================================================================
-# OBFUSCATION ENGINE
-# =============================================================================
 
 XOR_KEY = 42
 
@@ -160,10 +149,6 @@ def obfuscate(source, do_rename=True, do_strings=True, do_dead=True, dead_count=
     return result, stats
 
 
-# =============================================================================
-# ROUTES
-# =============================================================================
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -185,7 +170,6 @@ def obfuscate_route():
     do_dead    = data.get("dead", True)
     dead_count = int(data.get("dead_count", 2))
 
-    # Validate Python syntax first
     try:
         ast.parse(source)
     except SyntaxError as e:
