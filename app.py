@@ -6,11 +6,15 @@ import random
 import string
 import io
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 1 * 1024 * 1024  # 1 MB max upload
 
-XOR_KEY = 42
+XOR_KEY = int(os.getenv('XOR_KEY'))
 
 DECRYPT_HELPER = f"""def _xd(data, k={XOR_KEY}):
     return ''.join(chr(b ^ k) for b in data)
